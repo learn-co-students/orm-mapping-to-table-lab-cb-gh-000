@@ -2,6 +2,9 @@ require 'pry'
 require_relative "../config/environment.rb"
 
 class Student
+
+  # Remember, you can access your database connection anywhere in this class
+  #  with DB[:conn]  
   
   attr_accessor :name, :grade
   
@@ -29,19 +32,19 @@ class Student
     DB[:conn].execute(sql) 
   end
   
-  def self.save(student_instance)
+  def save
     sql = <<-SQL
       INSERT INTO students (name, grade) 
       VALUES (?, ?)
     SQL
-    
-    DB[:conn].execute(sql, "#{student_instance.name}", "#{student_instance.grade}")
 
+    DB[:conn].execute(sql, self.name, self.grade)
+    
   end
 
   def self.create(name:, grade:)
     student = Student.new(name, grade)
-    Student.save(student)
+    student.save
   end
 
 end
