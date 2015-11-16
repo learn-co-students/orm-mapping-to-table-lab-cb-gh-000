@@ -40,11 +40,11 @@ Your `Student` instances should initialize with a name, grade and an optional id
 
 ### The `#create_table` Method
 
-This is a class method that creates the students table. Use a heredoc to set a variable, `sql`, equal to the necessary SQL statement. Remember, the attribures of a student, `name`, `grade`, and `id`, should correpsond to the column names you are creating in your students table. The `id` column should by the primary key. 
+This is a class method that creates the students table. Use a heredoc to set a variable, `sql`, equal to the necessary SQL statement. Remember, the attribures of a student, `name`, `grade`, and `id`, should correspond to the column names you are creating in your students table. The `id` column should be the primary key. 
 
 With your `sql` variable pointing to the correct SQL statement, you can execute that statement using the `#execute` method provided to use by the SQLite3-Ruby gem. Remember that this method is called on whatever object stores your connection to the database, in this case `DB[:conn]`.
 
-### The `#drop_table` Method
+### The `.drop_table` Method
 
 This is a class method that drops the students table. Once again, create a variable `sql`, and set it equal to the SQL statement that drops the students table. Execute that statement againt the database using `DB[:conn].execute(sql)`. 
 
@@ -54,16 +54,7 @@ This is an instance method that saves the attributes describing a given student 
 
 Use bound paremeters to pass the given student's name and grade into the SQL statement. Remember that you don't need to insert a value for the `id` column. Because it is the primary key, the `id` column's value will be automatically assigned. 
 
-### The `#create` Method
+### The `.create` Method
 
 This is a class method that uses keyword arguments. The keyword arguments are `name:` and `grade:`. Use the values of these keyword arguments to: 1) instantiate a new `Student` object with `Student.new(name, grade)` and 2) save that new student object via `student.save`. 
-
-
-
-
-
-
-
-
-
 
