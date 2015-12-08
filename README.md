@@ -24,7 +24,7 @@ DB = {:conn => SQLite3::Database.new("db/students.db")}
 ```
 Your connection to the database can be referred to, throughout your program, like this: `DB[:conn]`. 
 
-Your job is to build out the `Student` class such that is has the two attributes described above. You'll also need to build a class method on the `Student` class that creates the students table in the database, a method that can drop that table and a method, `#save`, that can save the data concerning an individual student object to the database. 
+Your job is to build out the `Student` class such that it has the two attributes described above. You'll also need to build a class method on the `Student` class that creates the students table in the database, a method that can drop that table and a method, `#save`, that can save the data concerning an individual student object to the database. 
 
 Lastly, you'll create a method that *both creates a new instance of the student class and then saves it to the database.*
 
@@ -58,5 +58,3 @@ Use bound paremeters to pass the given student's name and grade into the SQL sta
 
 This is a class method that uses keyword arguments. The keyword arguments are `name:` and `grade:`. Use the values of these keyword arguments to: 1) instantiate a new `Student` object with `Student.new(name, grade)` and 2) save that new student object via `student.save`. The `#create` method should return the student object that it creates. 
 
-
-<a href='https://learn.co/lessons/orm-mapping-to-table-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
