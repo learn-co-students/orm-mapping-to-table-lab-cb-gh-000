@@ -52,7 +52,7 @@ This is a class method that drops the students table. Once again, create a varia
 
 This is an instance method that saves the attributes describing a given student to the students table in our database. Once again, create a variable, `sql`, and set it equal to the SQL statement that will `INSERT` the correct data into the table. 
 
-Use bound paremeters to pass the given student's name and grade into the SQL statement. Remember that you don't need to insert a value for the `id` column. Because it is the primary key, the `id` column's value will be automatically assigned. 
+Use bound paremeters to pass the given student's name and grade into the SQL statement. Remember that you don't need to insert a value for the `id` column. Because it is the primary key, the `id` column's value will be automatically assigned. **However**, at the end of your `#save` method, you do need to grab the ID of the last inserted row, i.e. the row you just inserted into the database, and assign it to the be the value of the @id attribute of the given instance.
 
 ### The `.create` Method
 
