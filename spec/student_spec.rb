@@ -16,7 +16,7 @@ describe "Student" do
       expect(student.grade).to eq("11th")
     end
 
-    it 'has a name that is readable but not writable' do 
+    it 'has an id that is readable but not writable' do 
       expect{josh.id = 1}.to raise_error
     end
   end
