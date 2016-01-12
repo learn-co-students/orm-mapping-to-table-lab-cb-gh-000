@@ -1,5 +1,3 @@
-
-require_relative "../lib/student.rb"
 require_relative "../config/environment.rb"
 
 RSpec.configure do |config|
