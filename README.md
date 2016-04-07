@@ -10,7 +10,9 @@
 
 ## Overview
 
-Let's say we're building an app to help a public school's adminstrators keep track of their students. In this app we have a `Student` class. Each individual students will have two attributes, a `name` and a `grade`, i.e. 9th, 10, 11th, etc.
+
+Let's say we're building an app to help a public school's administrators keep track of their students. In this app we have a `Student` class. Each individual student will have two attributes, a `name` and a `grade`, i.e. 9th, 10th, 11th, etc. 
+
 
 Our administrators need to save the student objects that this class produces to a database. We've set up the database for you in the `config/environment.rb` file.
 
@@ -38,7 +40,7 @@ Your `Student` instances should initialize with a name, grade and an optional id
 
 `Student` attributes should have an `attr_accessor` for `name` and `grade` but only an `attr_reader` for `id`. The only place `id` can be set equal to something is inside the initialize method, via: `@id = some_id`
 
-### The `#create_table` Method
+### The `.create_table` Method
 
 This is a class method that creates the students table. Use a heredoc to set a variable, `sql`, equal to the necessary SQL statement. Remember, the attributes of a student, `name`, `grade`, and `id`, should correspond to the column names you are creating in your students table. The `id` column should be the primary key.
 
@@ -58,4 +60,5 @@ Use bound parameters to pass the given student's name and grade into the SQL sta
 
 This is a class method that uses keyword arguments. The keyword arguments are `name:` and `grade:`. Use the values of these keyword arguments to: 1) instantiate a new `Student` object with `Student.new(name, grade)` and 2) save that new student object via `student.save`. The `#create` method should return the student object that it creates.
 
-<a href='https://learn.co/lessons/orm-mapping-to-table-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/orm-mapping-to-table-lab'>Mapping Classes to Tables Lab</a> on Learn.co and start learning to code for free.</p>
