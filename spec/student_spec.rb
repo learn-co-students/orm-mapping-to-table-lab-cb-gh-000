@@ -19,7 +19,7 @@ describe "Student" do
     end
   end
 
-  describe "#create_table" do
+  describe ".create_table" do
     it 'creates the students table in the database' do
       Student.create_table
       table_check_sql = "SELECT tbl_name FROM sqlite_master WHERE type='table' AND tbl_name='students';"
@@ -27,7 +27,7 @@ describe "Student" do
     end
   end
 
-  describe "#drop_table" do
+  describe ".drop_table" do
     it 'drops the students table from the database' do
       Student.create_table
       Student.drop_table
@@ -45,7 +45,7 @@ describe "Student" do
     end
   end
 
-  describe "#create" do
+  describe ".create" do
     before(:each) do
       Student.create_table
     end
