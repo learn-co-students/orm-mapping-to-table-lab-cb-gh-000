@@ -6,7 +6,7 @@ class Student
   attr_accessor :name, :grade
   attr_reader :id
 
-  def initialize(name = nil, grade = nil)
+  def initialize(name, grade)
     @name = name
     @grade = grade
   end
@@ -36,9 +36,8 @@ class Student
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
 
-  def self.create(attributes)
-    self.new.tap do |student|
-      attributes.each{ |key, value| student.send("#{key}=", value) }
+  def self.create(name:, grade:)
+    self.new(name, grade).tap do |student|
       student.save
     end
   end
