@@ -18,11 +18,11 @@ class Student
         grade TEXT
         )
     SQL
-    DB[:conn].execute(SQL)
+    DB[:conn].execute(sql)
   end
 
   def self.drop_table
-    sql = "DROP TABLE IF EXIST students";
+    sql = "DROP TABLE IF EXISTS students";
     DB[:conn].execute(sql)
   end
 
@@ -30,6 +30,7 @@ class Student
     sql = "INSERT INTO students(name, grade) VALUES(?, ?)"
 
     DB[:conn].execute(sql, @name, @grade)
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
 
   def self.create(name:, grade:)
