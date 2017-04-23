@@ -23,7 +23,11 @@ class Student
 
   # Drops students table from the database
   def self.drop_table
+    sql = <<-SQL
+      DROP TABLE students
+    SQL
 
+    DB[:conn].execute(sql)
   end
 
   # Creates a new Student object from a hash of attributes
