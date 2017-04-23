@@ -32,11 +32,18 @@ class Student
 
   # Creates a new Student object from a hash of attributes
   # and saves the student to the database
-  def self.create
-    # takes in a hash of attributes
-    # uses metaprogramming to create new student object
-    # uses #save method to save student to db
-    # returns new object that it instantiated
+  def self.create(attributes)
+    name = attributes[:name]
+    grade = attributes[:grade]
+
+    student = self.new(name, grade)
+
+    attributes.each do |attribute, value|
+      student.send("#{attribute}=", value)
+    end
+
+    student.save
+    student
   end
 
   # Saves an instance of the Student class to the database
