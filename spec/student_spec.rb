@@ -1,5 +1,5 @@
 require "spec_helper"
-
+__END__
 describe "Student" do
   let(:josh) {Student.new("Josh", "9th")}
 
