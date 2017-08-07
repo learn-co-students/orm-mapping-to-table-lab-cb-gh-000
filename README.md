@@ -46,7 +46,7 @@ With your `sql` variable pointing to the correct SQL statement, you can execute 
 
 ### The `.drop_table` Method
 
-This is a class method that drops the students table. Once again, create a variable `sql`, and set it equal to the SQL statement that drops the students table. Execute that statement againt the database using `DB[:conn].execute(sql)`. 
+This is a class method that drops the students table. Once again, create a variable `sql`, and set it equal to the SQL statement that drops the students table. Execute that statement against the database using `DB[:conn].execute(sql)`. 
 
 ### The `#save` Method
 
@@ -62,3 +62,5 @@ This is a class method that uses keyword arguments. The keyword arguments are `n
 <a href='https://learn.co/lessons/orm-mapping-to-table-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/orm-mapping-to-table-lab'>Mapping Classes to Tables Lab</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/orm-mapping-to-table-lab'>Mapping Classes to Tables Lab</a> on Learn.co and start learning to code for free.</p>
