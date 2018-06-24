@@ -8,7 +8,7 @@
 4. Write a method that saves a given instance to the database table. 
 5. Write a method that both creates a new instance of the class *and* saves that instance to a database table. 
 
-## Overview
+## Overviewk
 
 Let's say we're building an app to help a public school's administrators keep track of their students. In this app we have a `Student` class. Each individual student will have two attributes, a `name` and a `grade`, i.e. 9th, 10th, 11th, etc. 
 
