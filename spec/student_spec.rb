@@ -7,19 +7,27 @@ describe "Student" do
     DB[:conn].execute("DROP TABLE IF EXISTS students")
   end
 
-  describe "attributes" do
-    it 'has a name and a grade' do
+  describe "when initialized with a name and a grade" do
+    it 'the name attribute can be accessed' do
       student = Student.new("Tiffany", "11th")
       expect(student.name).to eq("Tiffany")
-      expect(student.grade).to eq("11th")
     end
 
-    it 'has an id that is readable but not writable' do
-      expect{josh.id = 1}.to raise_error(NoMethodError)
+    it 'the grade attribute can be accessed' do
+      student = Student.new("Tiffany", "11th")
+      expect(student.grade).to eq("11th")
     end
   end
 
-  describe "#create_table" do
+  it 'responds to a getter for :id' do
+    expect(josh).to respond_to(:id)
+  end
+
+  it 'does not provide a setter for :id' do
+    expect{josh.id = 1}.to raise_error(NoMethodError)
+  end
+
+  describe ".create_table" do
     it 'creates the students table in the database' do
       Student.create_table
       table_check_sql = "SELECT tbl_name FROM sqlite_master WHERE type='table' AND tbl_name='students';"
@@ -27,7 +35,7 @@ describe "Student" do
     end
   end
 
-  describe "#drop_table" do
+  describe ".drop_table" do
     it 'drops the students table from the database' do
       Student.create_table
       Student.drop_table
@@ -45,8 +53,8 @@ describe "Student" do
     end
   end
 
-  describe "#create" do
-    before(:each) do 
+  describe ".create" do
+    before(:each) do
       Student.create_table
     end
 
